@@ -11,7 +11,7 @@
 
      - name: print the information
        vars:
-        course: ansible
+        course: "ansible"
       ansible.builtin.debug:
         msg: "hi , iam learning {{course}}, duration :{{duration}}, trainer {{trainer}}"
 
