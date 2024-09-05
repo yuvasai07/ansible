@@ -4,5 +4,5 @@
 - name: install nginx
   ansible.builtin.package:
     name: nginx
-    stste: present
+    state: present
 
