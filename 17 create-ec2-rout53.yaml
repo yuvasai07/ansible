@@ -35,7 +35,7 @@
       record: "{{ iteam.iteam }}.{{ zone }}"
       type: a
       ttl: 1
-      value: "{{ item.instance[0].private_ip_adress }}"
+      value: "{{ item.instances[0].private_ip_adress }}"
       wait: true
       overwrite: true
-    loop: "{{ ec2_instance.results }}"  
+    loop: "{{ ec2_instances.results }}"  
