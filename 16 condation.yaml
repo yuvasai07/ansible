@@ -2,12 +2,12 @@
   hosts: local
   connection: local
   vars_prompt:
-  - name: number
+  - name: my_number
     prompt: please enter the number
     private: false
   tasks:
   - name: print this if number is less then 10
-    ansible.biltin.debug:
+    ansible.builtin.debug:
       msg: "given number {{ number }} is less than 10"
     when:  number < 10
 
