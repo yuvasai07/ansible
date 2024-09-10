@@ -10,12 +10,12 @@
     - ansible
     - terraform
     - aws
-    - kb
+    - k8
     live: true
     tools: 
       ci: jenkins
       cm: ansible
-      cloude: aws
+      cloud: aws
       - iam
       - s3
   tasks:
