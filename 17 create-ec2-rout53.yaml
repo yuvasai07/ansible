@@ -11,6 +11,7 @@
     - mysqlllll
     - backend
     - frontend
+    zone: yuvasai.online  
   tasks:
   
   - name: create ec2 instance
@@ -27,4 +28,14 @@
     ansible.builtin.debug:
       msg: "{{ ec2_instances }}"
 
-  
+  - name: create r53 records
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ iteam.iteam }}.{{ zone }}"
+      type: a
+      ttl: 1
+      value: "{{ item.instance[0].private_ip_adress }}"
+      wait: true
+      overwrite: true
+    loop: "{{ ec2_instance.results }}"  
